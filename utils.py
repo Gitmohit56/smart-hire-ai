@@ -1,11 +1,15 @@
 # utils.py
 import re
 import string
-from nltk.corpus import stopwords
 from sklearn.feature_extraction.text import TfidfVectorizer
 from sklearn.metrics.pairwise import cosine_similarity
 
-stop_words = set(stopwords.words('english'))
+# Manual stopwords (Cloud Safe)
+stop_words = {
+    "a","an","the","and","or","is","are","was","were",
+    "in","on","at","to","for","of","with","by","as",
+    "this","that","it","from","be","has","have"
+}
 
 def clean_text(text):
     text = text.lower()
